@@ -1,0 +1,40 @@
+name: Website Test Suite
+
+# Trigger tests on every push or pull request to the main branch
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  run-tests:
+    runs-level: ubuntu-latest
+
+    steps:
+    # Step 1: Clone the repository files onto the GitHub server
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Step 2: Set up the coding environment (e.g., Node.js)
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    # Step 3: Install project dependencies (like your testing tools)
+    - name: Install dependencies
+      run: npm ci
+
+    # Step 4: Run the actual test script defined in your package.json
+    - name: Run Web Tests
+      run: npm test
+Gamitin ang code nang may pag-iingat.3. Trigger and View the TestsCommit and push the .github/workflows/test.yml file to your GitHub repository.Open your web browser and navigate to your repository on the GitHub Website.Click on the Actions tab at the top of the repository interface.Look under "All workflows" to see your Website Test Suite running.Click on the active workflow run to watch the live console logs and check if your tests passed or failed.Alternative: Testing UI/Browser Loading (No Code Setup)If your repository hosts a static website (HTML/CSS) and you simply want to test if it loads properly without writing code, you can use a pre-built marketplace action. Replace your workflow file steps with this snippet to test a local HTML file directly using Chrome:yaml    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Test Local HTML File
+      uses: peterekepeter/test-with-browser@v1.1.0
+      with:
+        url: 'file://${{ github.workspace }}/index.html'
+        browser: 'chrome'
