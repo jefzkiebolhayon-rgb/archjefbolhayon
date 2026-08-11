@@ -7,9 +7,11 @@
     <title>Ar. Jefrey Bolhayon Project Portfolio</title>
 
     <style>
+
         /* =========================
            RESET & BASE
         ========================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -32,22 +34,26 @@
         /* =========================
            FIXED NAVIGATION
         ========================== */
+
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+
             padding: 30px 50px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             z-index: 1000;
 
             background:
                 linear-gradient(
                     to bottom,
-                    rgba(10,10,10,0.95),
-                    rgba(10,10,10,0.70),
+                    rgba(10, 10, 10, 0.97),
+                    rgba(10, 10, 10, 0.75),
                     transparent
                 );
 
@@ -70,69 +76,77 @@
             align-items: center;
         }
 
-        ```css
-  .nav-links a {
-    position: relative;
+        /* WHITE NAVIGATION TABS */
 
-    color: #ffffff; /* WHITE TAB TEXT */
-    text-decoration: none;
+        .nav-links a {
+            position: relative;
 
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
 
-    padding: 8px 0;
+            font-size: 14px;
+            font-weight: 600;
 
-    opacity: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
 
-    transition:
-        color 0.3s ease,
-        opacity 0.3s ease;
-}
+            padding: 8px 0;
 
-/* Hover */
-.nav-links a:hover {
-    color: #ffffff;
-    opacity: 0.75;
-}
+            opacity: 1;
 
-/* Active tab */
-.nav-links a.active {
-    color: #ffffff;
-    opacity: 1;
-}
+            transition:
+                color 0.3s ease,
+                opacity 0.3s ease;
+        }
 
-/* Underline */
-.nav-links a::after {
-    content: "";
+        /* Hover */
 
-    position: absolute;
-    left: 0;
-    bottom: 0;
+        .nav-links a:hover {
+            color: #ffffff;
+            opacity: 0.75;
+        }
 
-    width: 0;
-    height: 1px;
+        /* Active tab */
 
-    background: #ffffff;
+        .nav-links a.active {
+            color: #ffffff;
+            opacity: 1;
+        }
 
-    transition: width 0.3s ease;
-}
+        /* Active underline */
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-```
+        .nav-links a::after {
+            content: "";
 
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 1px;
+
+            background: #ffffff;
+
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
 
 
         /* =========================
-           HERO / ABOUT SECTION
+           HERO / ABOUT
         ========================== */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
+
             position: relative;
 
             scroll-margin-top: 120px;
@@ -140,9 +154,12 @@
 
         .hero-title {
             position: absolute;
-            left: 50px;
+
+            left: 50%;
             top: 50%;
-            transform: translateY(-50%);
+
+            transform: translate(-50%, -50%);
+
             z-index: 10;
 
             width: min(650px, 48vw);
@@ -150,8 +167,11 @@
 
         .hero-header-flex {
             display: flex;
+
             align-items: center;
+
             gap: 28px;
+
             margin-bottom: 20px;
         }
 
@@ -160,10 +180,13 @@
             min-width: 0;
 
             font-size: clamp(42px, 4.5vw, 72px);
+
             line-height: 0.9;
+
             font-weight: 900;
 
             text-transform: uppercase;
+
             letter-spacing: -2px;
         }
 
@@ -176,6 +199,7 @@
             display: block;
 
             object-fit: cover;
+
             object-position: center top;
 
             border-radius: 4px;
@@ -193,9 +217,11 @@
             margin-top: 20px;
 
             font-size: 18px;
-            color: #fff;
+
+            color: #ffffff;
 
             letter-spacing: 0.5px;
+
             line-height: 1.6;
         }
 
@@ -226,6 +252,7 @@
 
         .hero-video-container:hover .hero-video {
             transform: scale(1.05);
+
             filter: grayscale(0%) contrast(100%);
         }
 
@@ -233,6 +260,7 @@
         /* =========================
            SCROLL INDICATOR
         ========================== */
+
         .scroll-down {
             position: absolute;
 
@@ -240,16 +268,19 @@
             left: 50px;
 
             font-size: 15px;
+
             letter-spacing: 3px;
 
             text-transform: uppercase;
-            color: #fff;
+
+            color: #ffffff;
         }
 
 
         /* =========================
-           GENERAL SECTION
+           GENERAL SECTIONS
         ========================== */
+
         .portfolio,
         .skills-section,
         .contact-section {
@@ -264,17 +295,20 @@
             font-size: 32px;
 
             text-transform: uppercase;
+
             letter-spacing: 3px;
 
-            color: #fff;
+            color: #ffffff;
         }
 
 
         /* =========================
            SKILLS
         ========================== */
+
         .skills-section {
             padding: 100px 50px;
+
             border-top: 1px solid #222;
         }
 
@@ -282,7 +316,9 @@
             max-width: 850px;
 
             color: #aaa;
+
             font-size: 18px;
+
             line-height: 1.7;
 
             margin-bottom: 50px;
@@ -303,12 +339,15 @@
             padding: 28px 24px;
 
             border: 1px solid #222;
+
             background: #0e0e0e;
 
             display: flex;
+
             flex-direction: column;
 
             align-items: flex-start;
+
             justify-content: space-between;
 
             transition:
@@ -321,6 +360,7 @@
             transform: translateY(-6px);
 
             border-color: #555;
+
             background: #151515;
         }
 
@@ -337,17 +377,19 @@
             font-size: 17px;
 
             letter-spacing: 1px;
+
             text-transform: uppercase;
 
-            color: #fff;
+            color: #ffffff;
 
             margin-bottom: 7px;
         }
 
         .skill-card span {
-            color: #666;
+            color: #888;
 
             font-size: 12px;
+
             letter-spacing: 1.5px;
 
             text-transform: uppercase;
@@ -357,6 +399,7 @@
         /* =========================
            PORTFOLIO
         ========================== */
+
         .portfolio {
             padding: 100px 50px;
         }
@@ -374,9 +417,11 @@
             position: relative;
 
             overflow: hidden;
+
             cursor: pointer;
 
             opacity: 0;
+
             transform: translateY(50px);
 
             transition: all 0.8s ease;
@@ -384,11 +429,13 @@
 
         .project-card.visible {
             opacity: 1;
+
             transform: translateY(0);
         }
 
         .project-img-wrapper {
             width: 100%;
+
             height: 600px;
 
             overflow: hidden;
@@ -405,11 +452,17 @@
             filter: grayscale(100%);
 
             transition:
-                all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                all 0.6s cubic-bezier(
+                    0.25,
+                    1,
+                    0.5,
+                    1
+                );
         }
 
         .project-card:hover img {
             transform: scale(1.03);
+
             filter: grayscale(0%);
         }
 
@@ -419,6 +472,7 @@
             display: flex;
 
             justify-content: space-between;
+
             align-items: baseline;
         }
 
@@ -426,6 +480,7 @@
             font-size: 20px;
 
             text-transform: uppercase;
+
             letter-spacing: 1px;
         }
 
@@ -441,8 +496,10 @@
         /* =========================
            CONTACT
         ========================== */
+
         .contact-section {
             padding: 100px 50px;
+
             border-top: 1px solid #222;
         }
 
@@ -450,6 +507,7 @@
             display: flex;
 
             justify-content: space-between;
+
             align-items: flex-start;
 
             gap: 50px;
@@ -457,6 +515,7 @@
 
         .contact-details {
             display: flex;
+
             flex-direction: column;
 
             gap: 14px;
@@ -464,11 +523,12 @@
             color: #aaa;
 
             font-size: 16px;
+
             line-height: 1.6;
         }
 
         .contact-details a {
-            color: #fff;
+            color: #ffffff;
 
             text-decoration: none;
 
@@ -483,6 +543,7 @@
         /* =========================
            FOOTER
         ========================== */
+
         footer {
             padding: 80px 50px;
 
@@ -501,6 +562,7 @@
         /* =========================
            RESPONSIVE
         ========================== */
+
         @media (max-width: 968px) {
 
             nav {
@@ -509,6 +571,7 @@
 
             .logo {
                 font-size: 17px;
+
                 letter-spacing: 2px;
             }
 
@@ -518,6 +581,7 @@
 
             .nav-links a {
                 font-size: 11px;
+
                 letter-spacing: 1px;
             }
 
@@ -542,6 +606,7 @@
                 padding: 0 20px;
 
                 width: 100%;
+
                 max-width: 100%;
             }
 
@@ -551,6 +616,7 @@
 
             .hero-header-flex {
                 gap: 20px;
+
                 align-items: center;
             }
 
@@ -558,6 +624,7 @@
                 flex-basis: 90px;
 
                 width: 90px;
+
                 height: 110px;
             }
 
@@ -565,6 +632,7 @@
                 position: relative;
 
                 width: 100%;
+
                 height: 50vh;
 
                 margin-top: 40px;
@@ -572,6 +640,7 @@
 
             .grid {
                 grid-template-columns: 1fr;
+
                 gap: 30px;
             }
 
@@ -594,6 +663,7 @@
 
             .skill-card {
                 min-height: 170px;
+
                 padding: 22px 18px;
             }
 
@@ -618,15 +688,17 @@
             }
 
             .logo {
-                font-size: 14px;
+                font-size: 12px;
             }
 
             .nav-links {
-                gap: 12px;
+                gap: 10px;
             }
 
             .nav-links a {
                 font-size: 9px;
+
+                letter-spacing: 0.5px;
             }
 
             .skills-grid {
@@ -637,6 +709,7 @@
                 min-height: 150px;
             }
         }
+
     </style>
 </head>
 
@@ -644,9 +717,9 @@
 <body>
 
 
-    <!-- =========================================
+    <!-- =========================
          FIXED NAVIGATION
-    ========================================== -->
+    ========================== -->
 
     <nav>
 
@@ -656,30 +729,38 @@
 
         <ul class="nav-links">
 
-            <!-- ABOUT -->
             <li>
-                <a href="#about" class="nav-link active">
+                <a
+                    href="#about"
+                    class="nav-link active"
+                >
                     About
                 </a>
             </li>
 
-            <!-- WORK -->
             <li>
-                <a href="#work" class="nav-link">
+                <a
+                    href="#work"
+                    class="nav-link"
+                >
                     Work
                 </a>
             </li>
 
-            <!-- SKILLS -->
             <li>
-                <a href="#skills" class="nav-link">
+                <a
+                    href="#skills"
+                    class="nav-link"
+                >
                     Skills
                 </a>
             </li>
 
-            <!-- CONTACT -->
             <li>
-                <a href="#contact" class="nav-link">
+                <a
+                    href="#contact"
+                    class="nav-link"
+                >
                     Contact
                 </a>
             </li>
@@ -689,11 +770,15 @@
     </nav>
 
 
-    <!-- =========================================
-         ABOUT / HERO
-    ========================================== -->
 
-    <section class="hero" id="about">
+    <!-- =========================
+         ABOUT / HERO
+    ========================== -->
+
+    <section
+        class="hero"
+        id="about"
+    >
 
         <div class="hero-title">
 
@@ -743,7 +828,10 @@
                 class="hero-video"
             >
 
-                <source src="video/project.mp4">
+                <source
+                    src="video/project.mp4"
+                    type="video/mp4"
+                >
 
                 Your browser does not support the video tag.
 
@@ -760,9 +848,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =========================
          SKILLS
-    ========================================== -->
+    ========================== -->
 
     <section
         class="skills-section"
@@ -779,10 +867,8 @@
 
 
         <p class="skills-intro">
-
             Architectural design, visualization, documentation, and digital
             production using industry-standard software and creative tools.
-
         </p>
 
 
@@ -798,9 +884,7 @@
 
                 <div>
 
-                    <h3>
-                        AutoCAD
-                    </h3>
+                    <h3>AutoCAD</h3>
 
                     <span>
                         2D Drafting & Documentation
@@ -820,9 +904,7 @@
 
                 <div>
 
-                    <h3>
-                        Revit
-                    </h3>
+                    <h3>Revit</h3>
 
                     <span>
                         BIM & Architectural Modeling
@@ -842,9 +924,7 @@
 
                 <div>
 
-                    <h3>
-                        SketchUp
-                    </h3>
+                    <h3>SketchUp</h3>
 
                     <span>
                         3D Modeling & Design
@@ -864,9 +944,7 @@
 
                 <div>
 
-                    <h3>
-                        Photoshop
-                    </h3>
+                    <h3>Photoshop</h3>
 
                     <span>
                         Presentation & Post-Production
@@ -886,9 +964,7 @@
 
                 <div>
 
-                    <h3>
-                        Illustrator
-                    </h3>
+                    <h3>Illustrator</h3>
 
                     <span>
                         Graphics & Presentation
@@ -908,9 +984,7 @@
 
                 <div>
 
-                    <h3>
-                        3ds Max
-                    </h3>
+                    <h3>3ds Max</h3>
 
                     <span>
                         3D Visualization
@@ -930,9 +1004,7 @@
 
                 <div>
 
-                    <h3>
-                        Blender
-                    </h3>
+                    <h3>Blender</h3>
 
                     <span>
                         3D Modeling & Rendering
@@ -952,9 +1024,7 @@
 
                 <div>
 
-                    <h3>
-                        Figma
-                    </h3>
+                    <h3>Figma</h3>
 
                     <span>
                         Layout & Digital Presentation
@@ -964,15 +1034,16 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
 
-    <!-- =========================================
+    <!-- =========================
          WORK / SELECTED PROJECTS
-    ========================================== -->
+    ========================== -->
 
     <section
         class="portfolio"
@@ -990,6 +1061,8 @@
 
         <div class="grid">
 
+
+            <!-- GUINOLBAY -->
 
             <div
                 class="project-card"
@@ -1030,6 +1103,8 @@
 
 
 
+            <!-- MR & MRS REYES -->
+
             <div class="project-card">
 
                 <div class="project-img-wrapper">
@@ -1062,13 +1137,15 @@
 
 
 
+            <!-- PROJECT 3 -->
+
             <div class="project-card">
 
                 <div class="project-img-wrapper">
 
                     <img
                         src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
-                        alt="Project 3"
+                        alt="Minimalist Oasis"
                     >
 
                 </div>
@@ -1090,13 +1167,15 @@
 
 
 
+            <!-- PROJECT 4 -->
+
             <div class="project-card">
 
                 <div class="project-img-wrapper">
 
                     <img
                         src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
-                        alt="Project 4"
+                        alt="The Obsidian Villa"
                     >
 
                 </div>
@@ -1123,9 +1202,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =========================
          CONTACT
-    ========================================== -->
+    ========================== -->
 
     <section
         class="contact-section"
@@ -1169,9 +1248,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =========================
          FOOTER
-    ========================================== -->
+    ========================== -->
 
     <footer>
 
@@ -1180,9 +1259,11 @@
             All rights reserved.
         </div>
 
+
         <div>
 
             <p>
+
                 Connect:
 
                 <a
@@ -1191,6 +1272,7 @@
                 >
                     ar.jefreybolhayon@gmail.com
                 </a>
+
             </p>
 
         </div>
@@ -1199,15 +1281,15 @@
 
 
 
-    <!-- =========================================
+    <!-- =========================
          JAVASCRIPT
-    ========================================== -->
+    ========================== -->
 
     <script>
 
-        /* =====================================
+        /* =========================
            PROJECT CARD ANIMATION
-        ====================================== */
+        ========================== */
 
         const cards =
             document.querySelectorAll('.project-card');
@@ -1239,16 +1321,14 @@
 
 
         cards.forEach(card => {
-
             observer.observe(card);
-
         });
 
 
 
-        /* =====================================
+        /* =========================
            NAVIGATION ACTIVE TAB
-        ====================================== */
+        ========================== */
 
         const navLinks =
             document.querySelectorAll('.nav-link');
@@ -1265,7 +1345,6 @@
 
             const scrollPosition =
                 window.scrollY + 180;
-
 
             let currentSection = 'about';
 
@@ -1289,12 +1368,13 @@
 
                 link.classList.remove('active');
 
-
                 const target =
                     link.getAttribute('href');
 
-
-                if (target === '#' + currentSection) {
+                if (
+                    target ===
+                    '#' + currentSection
+                ) {
 
                     link.classList.add('active');
 
@@ -1319,42 +1399,44 @@
 
 
 
-        /* =====================================
+        /* =========================
            SMOOTH NAVIGATION
-        ====================================== */
+        ========================== */
 
         navLinks.forEach(link => {
 
-            link.addEventListener('click', function(event) {
+            link.addEventListener(
+                'click',
+                function(event) {
 
-                const targetId =
-                    this.getAttribute('href');
+                    const targetId =
+                        this.getAttribute('href');
 
-                const target =
-                    document.querySelector(targetId);
-
-
-                if (target) {
-
-                    event.preventDefault();
+                    const target =
+                        document.querySelector(targetId);
 
 
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                    }
 
                 }
-
-            });
+            );
 
         });
 
 
 
-        /* =====================================
-           RESTORE BROWSER SCROLL POSITION
-        ====================================== */
+        /* =========================
+           BROWSER SCROLL RESTORATION
+        ========================== */
 
         if ('scrollRestoration' in history) {
 
@@ -1363,6 +1445,7 @@
         }
 
     </script>
+
 
 </body>
 </html>
