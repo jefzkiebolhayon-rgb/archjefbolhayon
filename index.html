@@ -6,11 +6,9 @@
     <title>Ar. Jefrey Bolhayon Project Portfolio</title>
 
     <style>
-
         /* =========================
            RESET & BASE
         ========================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -29,33 +27,25 @@
             overflow-x: hidden;
         }
 
-
         /* =========================
            FIXED NAVIGATION
         ========================== */
-
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-
             padding: 30px 50px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             z-index: 1000;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(10, 10, 10, 0.97),
-                    rgba(10, 10, 10, 0.75),
-                    transparent
-                );
-
+            background: linear-gradient(
+                to bottom,
+                rgba(10, 10, 10, 0.97),
+                rgba(10, 10, 10, 0.75),
+                transparent
+            );
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
@@ -75,58 +65,37 @@
             align-items: center;
         }
 
-        /* WHITE NAVIGATION TABS */
-
         .nav-links a {
             position: relative;
-
             color: #ffffff;
             text-decoration: none;
-
             font-size: 14px;
             font-weight: 600;
-
             text-transform: uppercase;
             letter-spacing: 2px;
-
             padding: 8px 0;
-
             opacity: 1;
-
-            transition:
-                color 0.3s ease,
-                opacity 0.3s ease;
+            transition: color 0.3s ease, opacity 0.3s ease;
         }
-
-        /* Hover */
 
         .nav-links a:hover {
             color: #ffffff;
             opacity: 0.75;
         }
 
-        /* Active tab */
-
         .nav-links a.active {
             color: #ffffff;
             opacity: 1;
         }
 
-        /* Active underline */
-
         .nav-links a::after {
             content: "";
-
             position: absolute;
-
             left: 0;
             bottom: 0;
-
             width: 0;
             height: 1px;
-
             background: #ffffff;
-
             transition: width 0.3s ease;
         }
 
@@ -135,76 +104,52 @@
             width: 100%;
         }
 
-
         /* =========================
            HERO / ABOUT
         ========================== */
-
         .hero {
             min-height: 100vh;
-
             display: flex;
             align-items: center;
-
             position: relative;
-
             scroll-margin-top: 120px;
         }
 
         .hero-title {
             position: absolute;
-
-            left: 50%;
+            left: 50px;
             top: 50%;
-
-            transform: translate(-50%, -50%);
-
+            transform: translateY(-50%);
             z-index: 10;
-
-            width: min(650px, 48vw);
+            width: min(550px, 40vw);
         }
 
         .hero-header-flex {
             display: flex;
-
             align-items: center;
-
             gap: 28px;
-
             margin-bottom: 20px;
         }
 
         .hero-title h1 {
             flex: 1;
             min-width: 0;
-
             font-size: clamp(42px, 4.5vw, 72px);
-
             line-height: 0.9;
-
             font-weight: 900;
-
             text-transform: uppercase;
-
             letter-spacing: -2px;
         }
 
         .owner-portrait {
             flex: 0 0 150px;
-
             width: 150px;
             height: 180px;
-
             display: block;
-
             object-fit: cover;
-
             object-position: center top;
-
             border-radius: 4px;
-
             filter: grayscale(0%);
-
             transition: filter 0.3s;
         }
 
@@ -214,72 +159,50 @@
 
         .hero-title p {
             margin-top: 20px;
-
             font-size: 18px;
-
             color: #ffffff;
-
             letter-spacing: 0.5px;
-
             line-height: 1.6;
         }
 
         .hero-video-container {
             position: absolute;
-
             right: 0;
             top: 0;
-
             width: 55%;
             height: 100%;
-
             overflow: hidden;
         }
 
         .hero-video {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             filter: grayscale(0%) contrast(80%);
-
-            transition:
-                transform 0.8s ease,
-                filter 0.8s ease;
+            transition: transform 0.8s ease, filter 0.8s ease;
         }
 
         .hero-video-container:hover .hero-video {
             transform: scale(1.05);
-
             filter: grayscale(0%) contrast(100%);
         }
-
 
         /* =========================
            SCROLL INDICATOR
         ========================== */
-
         .scroll-down {
             position: absolute;
-
             bottom: 40px;
             left: 50px;
-
             font-size: 15px;
-
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
             color: #ffffff;
         }
-
 
         /* =========================
            GENERAL SECTIONS
         ========================== */
-
         .portfolio,
         .skills-section,
         .contact-section {
@@ -292,245 +215,166 @@
 
         .section-header h2 {
             font-size: 32px;
-
             text-transform: uppercase;
-
             letter-spacing: 3px;
-
             color: #ffffff;
         }
-
 
         /* =========================
            SKILLS
         ========================== */
-
         .skills-section {
             padding: 100px 50px;
-
             border-top: 1px solid #222;
         }
 
         .skills-intro {
             max-width: 850px;
-
             color: #aaa;
-
             font-size: 18px;
-
             line-height: 1.7;
-
             margin-bottom: 50px;
         }
 
         .skills-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
-
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 22px;
         }
 
         .skill-card {
             min-height: 190px;
-
             padding: 28px 24px;
-
             border: 1px solid #222;
-
             background: #0e0e0e;
-
             display: flex;
-
             flex-direction: column;
-
             align-items: flex-start;
-
             justify-content: space-between;
-
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                background 0.35s ease;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
         }
 
         .skill-card:hover {
             transform: translateY(-6px);
-
             border-color: #555;
-
             background: #151515;
         }
 
         .skill-card img {
             width: 58px;
             height: 58px;
-
             object-fit: contain;
-
             margin-bottom: 25px;
         }
 
         .skill-card h3 {
             font-size: 17px;
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
-
             color: #ffffff;
-
             margin-bottom: 7px;
         }
 
         .skill-card span {
             color: #888;
-
             font-size: 12px;
-
             letter-spacing: 1.5px;
-
             text-transform: uppercase;
         }
-
 
         /* =========================
            PORTFOLIO
         ========================== */
-
         .portfolio {
             padding: 100px 50px;
         }
 
         .grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 50px;
         }
 
         .project-card {
             position: relative;
-
             overflow: hidden;
-
             cursor: pointer;
-
             opacity: 0;
-
             transform: translateY(50px);
-
             transition: all 0.8s ease;
         }
 
         .project-card.visible {
             opacity: 1;
-
             transform: translateY(0);
         }
 
         .project-img-wrapper {
             width: 100%;
-
             height: 600px;
-
             overflow: hidden;
-
             background-color: #111;
         }
 
         .project-card img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             filter: grayscale(100%);
-
-            transition:
-                all 0.6s cubic-bezier(
-                    0.25,
-                    1,
-                    0.5,
-                    1
-                );
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .project-card:hover img {
             transform: scale(1.03);
-
             filter: grayscale(0%);
         }
 
         .project-info {
             margin-top: 20px;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: baseline;
         }
 
         .project-title {
             font-size: 20px;
-
             text-transform: uppercase;
-
             letter-spacing: 1px;
         }
 
         .project-category {
             font-size: 14px;
-
             color: #666;
-
             text-transform: uppercase;
         }
-
 
         /* =========================
            CONTACT
         ========================== */
-
         .contact-section {
             padding: 100px 50px;
-
             border-top: 1px solid #222;
         }
 
         .contact-content {
             display: flex;
-
             justify-content: space-between;
-
             align-items: flex-start;
-
             gap: 50px;
         }
 
         .contact-details {
             display: flex;
-
             flex-direction: column;
-
             gap: 14px;
-
             color: #aaa;
-
             font-size: 16px;
-
             line-height: 1.6;
         }
 
         .contact-details a {
             color: #ffffff;
-
             text-decoration: none;
-
             transition: color 0.3s;
         }
 
@@ -538,39 +382,28 @@
             color: #888;
         }
 
-
         /* =========================
            FOOTER
         ========================== */
-
         footer {
             padding: 80px 50px;
-
             border-top: 1px solid #222;
-
             display: flex;
-
             justify-content: space-between;
-
             color: #444;
-
             font-size: 14px;
         }
-
 
         /* =========================
            RESPONSIVE
         ========================== */
-
         @media (max-width: 968px) {
-
             nav {
                 padding: 20px;
             }
 
             .logo {
                 font-size: 17px;
-
                 letter-spacing: 2px;
             }
 
@@ -580,32 +413,23 @@
 
             .nav-links a {
                 font-size: 11px;
-
                 letter-spacing: 1px;
             }
 
             .hero {
                 flex-direction: column;
-
                 justify-content: center;
-
                 height: auto;
-
                 padding-top: 120px;
             }
 
             .hero-title {
                 position: relative;
-
                 left: 0;
                 top: auto;
-
                 transform: none;
-
                 padding: 0 20px;
-
                 width: 100%;
-
                 max-width: 100%;
             }
 
@@ -615,31 +439,24 @@
 
             .hero-header-flex {
                 gap: 20px;
-
                 align-items: center;
             }
 
             .owner-portrait {
                 flex-basis: 90px;
-
                 width: 90px;
-
                 height: 110px;
             }
 
             .hero-video-container {
                 position: relative;
-
                 width: 100%;
-
                 height: 50vh;
-
                 margin-top: 40px;
             }
 
             .grid {
                 grid-template-columns: 1fr;
-
                 gap: 30px;
             }
 
@@ -654,15 +471,12 @@
             }
 
             .skills-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 15px;
             }
 
             .skill-card {
                 min-height: 170px;
-
                 padding: 22px 18px;
             }
 
@@ -672,16 +486,12 @@
 
             footer {
                 padding: 40px 20px;
-
                 flex-direction: column;
-
                 gap: 20px;
             }
         }
 
-
         @media (max-width: 520px) {
-
             nav {
                 padding: 15px;
             }
@@ -696,7 +506,6 @@
 
             .nav-links a {
                 font-size: 9px;
-
                 letter-spacing: 0.5px;
             }
 
@@ -708,94 +517,38 @@
                 min-height: 150px;
             }
         }
-
     </style>
 </head>
-
-
 <body>
-
 
     <!-- =========================
          FIXED NAVIGATION
     ========================== -->
-
     <nav>
-
         <div class="logo">
             Ar. Jefrey Bolhayon, UAP
         </div>
 
         <ul class="nav-links">
-
-            <li>
-                <a
-                    href="#about"
-                    class="nav-link active"
-                >
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="#work"
-                    class="nav-link"
-                >
-                    Work
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="#skills"
-                    class="nav-link"
-                >
-                    Skills
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="#contact"
-                    class="nav-link"
-                >
-                    Contact
-                </a>
-            </li>
-
+            <li><a href="#about" class="nav-link active">About</a></li>
+            <li><a href="#work" class="nav-link">Work</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-
     </nav>
-
-
 
     <!-- =========================
          ABOUT / HERO
     ========================== -->
-
-    <section
-        class="hero"
-        id="about"
-    >
-
+    <section class="hero" id="about">
         <div class="hero-title">
-
             <div class="hero-header-flex">
-
-                <img
-                    src="images/My picture.png"
-                    alt="Ar. Jefrey Bolhayon"
-                    class="owner-portrait"
-                >
-
+                <img src="images/My picture.png" alt="Ar. Jefrey Bolhayon" class="owner-portrait">
                 <h1>
                     PROJECT<br>
                     PORTFOLIO.
                 </h1>
-
             </div>
-
 
             <p>
                 As an architect, I am dedicated to designing functional,
@@ -805,7 +558,6 @@
                 I tackle each project with creativity, accuracy, and intent.
             </p>
 
-
             <p style="margin-top: 10px;">
                 My efforts concentrate on harmonizing form and utility—turning
                 ideas into significant designs that cater to both ecological
@@ -813,525 +565,230 @@
                 approaches, effective space utilization, and incorporating
                 contemporary technologies into architectural practices.
             </p>
-
         </div>
-
 
         <div class="hero-video-container">
-
-            <video
-                autoplay
-                loop
-                muted
-                playsinline
-                class="hero-video"
-            >
-
-                <source
-                    src="video/project.mp4"
-                    type="video/mp4"
-                >
-
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="video/project.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-
             </video>
-
         </div>
-
 
         <div class="scroll-down">
-            ↓ Scroll to explore
+            &darr; Scroll to explore
         </div>
-
     </section>
-
-
 
     <!-- =========================
          SKILLS
     ========================== -->
-
-    <section
-        class="skills-section"
-        id="skills"
-    >
-
+    <section class="skills-section" id="skills">
         <div class="section-header">
-
-            <h2>
-                Skills
-            </h2>
-
+            <h2>Skills</h2>
         </div>
-
 
         <p class="skills-intro">
             Architectural design, visualization, documentation, and digital
             production using industry-standard software and creative tools.
         </p>
 
-
         <div class="skills-grid">
-
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg"
-                    alt="AutoCAD"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" alt="AutoCAD">
                 <div>
-
                     <h3>AutoCAD</h3>
-
-                    <span>
-                        2D Drafting & Documentation
-                    </span>
-
+                    <span>2D Drafting &amp; Documentation</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/revit/revit-original.svg"
-                    alt="Revit"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/revit/revit-original.svg" alt="Revit">
                 <div>
-
                     <h3>Revit</h3>
-
-                    <span>
-                        BIM & Architectural Modeling
-                    </span>
-
+                    <span>BIM &amp; Architectural Modeling</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketchup/sketchup-original.svg"
-                    alt="SketchUp"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketchup/sketchup-original.svg" alt="SketchUp">
                 <div>
-
                     <h3>SketchUp</h3>
-
-                    <span>
-                        3D Modeling & Design
-                    </span>
-
+                    <span>3D Modeling &amp; Design</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
-                    alt="Adobe Photoshop"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Adobe Photoshop">
                 <div>
-
                     <h3>Photoshop</h3>
-
-                    <span>
-                        Presentation & Post-Production
-                    </span>
-
+                    <span>Presentation &amp; Post-Production</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
-                    alt="Adobe Illustrator"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Adobe Illustrator">
                 <div>
-
                     <h3>Illustrator</h3>
-
-                    <span>
-                        Graphics & Presentation
-                    </span>
-
+                    <span>Graphics &amp; Presentation</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/3dsmax/3dsmax-original.svg"
-                    alt="3ds Max"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/3dsmax/3dsmax-original.svg" alt="3ds Max">
                 <div>
-
                     <h3>3ds Max</h3>
-
-                    <span>
-                        3D Visualization
-                    </span>
-
+                    <span>3D Visualization</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"
-                    alt="Blender"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender">
                 <div>
-
                     <h3>Blender</h3>
-
-                    <span>
-                        3D Modeling & Rendering
-                    </span>
-
+                    <span>3D Modeling &amp; Rendering</span>
                 </div>
-
             </div>
-
 
             <div class="skill-card">
-
-                <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                    alt="Figma"
-                >
-
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
                 <div>
-
                     <h3>Figma</h3>
-
-                    <span>
-                        Layout & Digital Presentation
-                    </span>
-
+                    <span>Layout &amp; Digital Presentation</span>
                 </div>
-
             </div>
-
-
         </div>
-
     </section>
-
-
 
     <!-- =========================
          WORK / SELECTED PROJECTS
     ========================== -->
-
-    <section
-        class="portfolio"
-        id="work"
-    >
-
+    <section class="portfolio" id="work">
         <div class="section-header">
-
-            <h2>
-                Selected Projects
-            </h2>
-
+            <h2>Selected Projects</h2>
         </div>
-
 
         <div class="grid">
-
-
             <!-- GUINOLBAY -->
-
-            <div
-                class="project-card"
-                id="guinolbay"
-                data-project="guinolbay"
-            >
-
+            <div class="project-card" id="guinolbay" data-project="guinolbay">
                 <div class="project-img-wrapper">
-
-                    <a
-                        href="guinolbay.html"
-                        class="project-link"
-                    >
-
-                        <img
-                            src="images/work label./DAYTIME EXTERIOR VIEW.jpg"
-                            alt="Guinolbay Residence"
-                        >
-
+                    <a href="guinolbay.html" class="project-link">
+                        <img src="images/work label./DAYTIME EXTERIOR VIEW.jpg" alt="Guinolbay Residence">
                     </a>
-
                 </div>
-
-
                 <div class="project-info">
-
-                    <div class="project-title">
-                        GUINOLBAY RESIDENCE
-                    </div>
-
-                    <div class="project-category">
-                        Residential / 2025
-                    </div>
-
+                    <div class="project-title">GUINOLBAY RESIDENCE</div>
+                    <div class="project-category">Residential / 2025</div>
                 </div>
-
             </div>
-
-
 
             <!-- MR & MRS REYES -->
-
             <div class="project-card">
-
                 <div class="project-img-wrapper">
-
                     <a href="DOC BOB..html">
-
-                        <img
-                            src="images/mr & mrs. reyes/f_02.jpg"
-                            alt="Mr & Mrs. Reyes Condominium"
-                        >
-
+                        <img src="images/mr & mrs. reyes/f_02.jpg" alt="Mr & Mrs. Reyes Condominium">
                     </a>
-
                 </div>
-
-
                 <div class="project-info">
-
-                    <div class="project-title">
-                        Mr & Mrs. Reyes Condominium
-                    </div>
-
-                    <div class="project-category">
-                        Condominium / 2026
-                    </div>
-
+                    <div class="project-title">Mr &amp; Mrs. Reyes Condominium</div>
+                    <div class="project-category">Condominium / 2026</div>
                 </div>
-
             </div>
-
-
 
             <!-- PROJECT 3 -->
-
             <div class="project-card">
-
                 <div class="project-img-wrapper">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
-                        alt="Minimalist Oasis"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Minimalist Oasis">
                 </div>
-
-
                 <div class="project-info">
-
-                    <div class="project-title">
-                        Minimalist Oasis
-                    </div>
-
-                    <div class="project-category">
-                        Interior / 2024
-                    </div>
-
+                    <div class="project-title">Minimalist Oasis</div>
+                    <div class="project-category">Interior / 2024</div>
                 </div>
-
             </div>
-
-
 
             <!-- PROJECT 4 -->
-
             <div class="project-card">
-
                 <div class="project-img-wrapper">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
-                        alt="The Obsidian Villa"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="The Obsidian Villa">
                 </div>
-
-
                 <div class="project-info">
-
-                    <div class="project-title">
-                        The Obsidian Villa
-                    </div>
-
-                    <div class="project-category">
-                        Residential / 2025
-                    </div>
-
+                    <div class="project-title">The Obsidian Villa</div>
+                    <div class="project-category">Residential / 2025</div>
                 </div>
-
             </div>
-
-
         </div>
-
     </section>
-
-
 
     <!-- =========================
          CONTACT
     ========================== -->
-
-    <section
-        class="contact-section"
-        id="contact"
-    >
-
+    <section class="contact-section" id="contact">
         <div class="section-header">
-
-            <h2>
-                Contact
-            </h2>
-
+            <h2>Contact</h2>
         </div>
 
-
         <div class="contact-content">
-
             <div class="contact-details">
-
-                <div>
-                    Architect: Ar. Jefrey Bolhayon, UAP
-                </div>
-
+                <div>Architect: Ar. Jefrey Bolhayon, UAP</div>
                 <div>
                     Email:
-                    <a href="mailto:ar.jefreybolhayon@gmail.com">
-                        ar.jefreybolhayon@gmail.com
-                    </a>
+                    <a href="mailto:ar.jefreybolhayon@gmail.com">ar.jefreybolhayon@gmail.com</a>
                 </div>
-
                 <div>
                     Available for architectural design,
                     visualization, and project collaboration.
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
 
     <!-- =========================
          FOOTER
     ========================== -->
-
     <footer>
-
         <div>
-            &copy; 2016-2026 Project Portfolio.
-            All rights reserved.
+            &copy; 2016-2026 Project Portfolio. All rights reserved.
         </div>
-
-
         <div>
-
             <p>
-
                 Connect:
-
-                <a
-                    href="mailto:ar.jefreybolhayon@gmail.com"
-                    style="color:#888; text-decoration:none;"
-                >
+                <a href="mailto:ar.jefreybolhayon@gmail.com" style="color:#888; text-decoration:none;">
                     ar.jefreybolhayon@gmail.com
                 </a>
-
             </p>
-
         </div>
-
     </footer>
-
-
 
     <!-- =========================
          JAVASCRIPT
     ========================== -->
-
     <script>
-
         /* =========================
            PROJECT CARD ANIMATION
         ========================== */
-
-        const cards =
-            document.querySelectorAll('.project-card');
+        const cards = document.querySelectorAll('.project-card');
 
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
         };
 
-        const observer =
-            new IntersectionObserver(
-                (entries, observer) => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add('visible');
-
-                            observer.unobserve(entry.target);
-
-                        }
-
-                    });
-
-                },
-                observerOptions
-            );
-
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
         cards.forEach(card => {
             observer.observe(card);
         });
 
-
-
         /* =========================
            NAVIGATION ACTIVE TAB
         ========================== */
-
-        const navLinks =
-            document.querySelectorAll('.nav-link');
-
+        const navLinks = document.querySelectorAll('.nav-link');
         const sections = [
             document.getElementById('about'),
             document.getElementById('work'),
@@ -1339,113 +796,52 @@
             document.getElementById('contact')
         ];
 
-
         function updateActiveNavigation() {
-
-            const scrollPosition =
-                window.scrollY + 180;
-
+            const scrollPosition = window.scrollY + 180;
             let currentSection = 'about';
 
-
             sections.forEach(section => {
-
-                if (
-                    section &&
-                    scrollPosition >= section.offsetTop
-                ) {
-
-                    currentSection =
-                        section.getAttribute('id');
-
+                if (section && scrollPosition >= section.offsetTop) {
+                    currentSection = section.getAttribute('id');
                 }
-
             });
-
 
             navLinks.forEach(link => {
-
                 link.classList.remove('active');
-
-                const target =
-                    link.getAttribute('href');
-
-                if (
-                    target ===
-                    '#' + currentSection
-                ) {
-
+                const target = link.getAttribute('href');
+                if (target === '#' + currentSection) {
                     link.classList.add('active');
-
                 }
-
             });
-
         }
 
-
-        window.addEventListener(
-            'scroll',
-            updateActiveNavigation,
-            { passive: true }
-        );
-
-
-        window.addEventListener(
-            'load',
-            updateActiveNavigation
-        );
-
-
+        window.addEventListener('scroll', updateActiveNavigation, { passive: true });
+        window.addEventListener('load', updateActiveNavigation);
 
         /* =========================
            SMOOTH NAVIGATION
         ========================== */
-
         navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
 
-            link.addEventListener(
-                'click',
-                function(event) {
-
-                    const targetId =
-                        this.getAttribute('href');
-
-                    const target =
-                        document.querySelector(targetId);
-
-
-                    if (target) {
-
-                        event.preventDefault();
-
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                    }
-
+                if (target) {
+                    event.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            );
-
+            });
         });
-
-
 
         /* =========================
            BROWSER SCROLL RESTORATION
         ========================== */
-
         if ('scrollRestoration' in history) {
-
             history.scrollRestoration = 'auto';
-
         }
-
     </script>
-
-
 </body>
 </html>
-```
