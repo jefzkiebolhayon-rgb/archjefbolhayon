@@ -150,21 +150,64 @@
             color: #fff;
         }
 
-        /* STUDIO SECTION */
-        .about-section {
+        /* SKILLS SECTION */
+        .skills-section {
             padding: 100px 50px;
             border-top: 1px solid #222;
         }
 
-        .about-content {
+        .skills-intro {
             max-width: 850px;
             color: #aaa;
             font-size: 18px;
-            line-height: 1.8;
+            line-height: 1.7;
+            margin-bottom: 50px;
         }
 
-        .about-content p + p {
-            margin-top: 20px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .skill-card {
+            min-height: 190px;
+            padding: 28px 24px;
+            border: 1px solid #222;
+            background: #0e0e0e;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: #555;
+            background: #151515;
+        }
+
+        .skill-card img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            margin-bottom: 25px;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 7px;
+        }
+
+        .skill-card span {
+            color: #666;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         /* CONTACT SECTION */
@@ -303,9 +346,16 @@
             .hero-video-container { position: relative; width: 100%; height: 50vh; margin-top: 40px; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .project-img-wrapper { height: 400px; }
-            .portfolio, .about-section, .contact-section { padding: 50px 20px; }
+            .portfolio, .skills-section, .contact-section { padding: 50px 20px; }
+            .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+            .skill-card { min-height: 170px; padding: 22px 18px; }
             .contact-content { flex-direction: column; }
             footer { padding: 40px 20px; flex-direction: column; gap: 20px; }
+        }
+
+        @media (max-width: 520px) {
+            .skills-grid { grid-template-columns: 1fr; }
+            .skill-card { min-height: 150px; }
         }
     </style>
 </head>
@@ -315,7 +365,7 @@
         <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
         <ul class="nav-links">
             <li><a href="#work">Work</a></li>
-            <li><a href="#about">Studio</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -340,13 +390,80 @@
         <div class="scroll-down">↓ Scroll to explore</div>
     </section>
 
-    <section class="about-section" id="about">
+    <section class="skills-section" id="skills">
         <div class="section-header">
-            <h2>Studio</h2>
+            <h2>Skills</h2>
         </div>
-        <div class="about-content">
-            <p>Architectural design focused on functional, sustainable, and visually compelling spaces.</p>
-            <p>With experience across residential, commercial, hospitality, interior fit-out, and construction projects, each project is approached with clarity, creativity, and attention to detail.</p>
+
+        <p class="skills-intro">
+            Architectural design, visualization, documentation, and digital production
+            using industry-standard software and creative tools.
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" alt="AutoCAD">
+                <div>
+                    <h3>AutoCAD</h3>
+                    <span>2D Drafting & Documentation</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/revit/revit-original.svg" alt="Revit">
+                <div>
+                    <h3>Revit</h3>
+                    <span>BIM & Architectural Modeling</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketchup/sketchup-original.svg" alt="SketchUp">
+                <div>
+                    <h3>SketchUp</h3>
+                    <span>3D Modeling & Design</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Adobe Photoshop">
+                <div>
+                    <h3>Photoshop</h3>
+                    <span>Presentation & Post-Production</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Adobe Illustrator">
+                <div>
+                    <h3>Illustrator</h3>
+                    <span>Graphics & Presentation</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/3dsmax/3dsmax-original.svg" alt="3ds Max">
+                <div>
+                    <h3>3ds Max</h3>
+                    <span>3D Visualization</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender">
+                <div>
+                    <h3>Blender</h3>
+                    <span>3D Modeling & Rendering</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                <div>
+                    <h3>Figma</h3>
+                    <span>Layout & Digital Presentation</span>
+                </div>
+            </div>
         </div>
     </section>
 
