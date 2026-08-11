@@ -271,7 +271,6 @@
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s ease;
-            scroll-margin-top: 120px;
         }
 
         .project-card.visible {
@@ -563,33 +562,6 @@
         });
     </script>
 
-<script>
-/* Project-return positioning */
-document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('click', function () {
-        const card = this.closest('.project-card');
-        if (card && card.id) sessionStorage.setItem('lastProject', card.id);
-    });
-});
 
-function restoreProjectPosition() {
-    const hashId = window.location.hash ? window.location.hash.substring(1) : '';
-    const savedId = sessionStorage.getItem('lastProject');
-    const targetId = hashId || savedId;
-    if (!targetId) return;
-
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            target.scrollIntoView({ behavior: 'auto', block: 'start' });
-        });
-    });
-}
-
-window.addEventListener('DOMContentLoaded', restoreProjectPosition);
-window.addEventListener('pageshow', restoreProjectPosition);
-</script>
 </body>
 </html>
