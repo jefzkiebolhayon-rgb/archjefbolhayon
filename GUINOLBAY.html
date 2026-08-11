@@ -379,12 +379,12 @@
     <script>
         document.querySelectorAll('.project-card').forEach(card => {
 
-    card.addEventListener('click', function () {
+            card.addEventListener('click', function () {
 
-        document
-            .querySelectorAll('.project-card')
-            .forEach(item => {
-                item.classList.remove('last-selected');
+                document
+                    .querySelectorAll('.project-card')
+                    .forEach(item => {
+                     item.classList.remove('last-selected');
             });
 
         this.classList.add('last-selected');
