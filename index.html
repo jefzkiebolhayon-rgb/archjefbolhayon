@@ -563,5 +563,11 @@
     </script>
 
 
+    <script>
+        // Let the browser restore the exact homepage scroll position on Back.
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'auto';
+        }
+    </script>
 </body>
 </html>
