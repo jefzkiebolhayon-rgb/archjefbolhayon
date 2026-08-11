@@ -377,25 +377,21 @@
     </footer>
 
     <script>
-        const cards = document.querySelectorAll('.project-card');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+        document.querySelectorAll('.project-card').forEach(card => {
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+    card.addEventListener('click', function () {
+
+        document
+            .querySelectorAll('.project-card')
+            .forEach(item => {
+                item.classList.remove('last-selected');
             });
-        }, observerOptions);
 
-        cards.forEach(card => {
-            observer.observe(card);
-        });
-    </script>
+        this.classList.add('last-selected');
+
+    });
+
+});
+</script>
 </body>
 </html>
