@@ -207,7 +207,9 @@
     <nav>
         <div class="logo-group">
             <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
-            <a href="index.html" class="back-home" aria-label="Back to guinolbay page">
+            <!-- The #guinolbay anchor jumps the browser straight to the Guinolbay
+                 thumbnail on the homepage instead of the top of the page. -->
+            <a href="index.html" class="back-home" onclick="history.back(); return false;" aria-label="Back to previous page">
                 <span class="arrow">←</span>
                 <span>Back</span>
             </a>
@@ -307,15 +309,13 @@
     
 
 
-
-<script>
-    // Reveal project cards on page load.
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.project-card').forEach(function (card) {
-            card.classList.add('visible');
+    <script>
+        // Reveal project cards on page load.
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.project-card').forEach(function (card) {
+                card.classList.add('visible');
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
