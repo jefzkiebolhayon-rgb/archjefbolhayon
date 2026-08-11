@@ -1,1 +1,32 @@
 
+name: Website Test Suite
+
+# Trigger tests on every push or pull request to the main branch
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  run-tests:
+    runs-level: ubuntu-latest
+
+    steps:
+    # Step 1: Clone the repository files onto the GitHub server
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Step 2: Set up the coding environment (e.g., Node.js)
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    # Step 3: Install project dependencies (like your testing tools)
+    - name: Install dependencies
+      run: npm ci
+
+    # Step 4: Run the actual test script defined in your package.json
+    - name: Run Web Tests
+      run: npm test
