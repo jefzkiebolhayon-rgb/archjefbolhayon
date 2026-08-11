@@ -70,19 +70,23 @@
         .hero-title {
             position: absolute;
             left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 10;
-            max-width: 650px;
+            width: min(650px, 48vw);
         }
 
         .hero-header-flex {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 28px;
             margin-bottom: 20px;
         }
 
         .hero-title h1 {
-            font-size: 4.5vw;
+            flex: 1;
+            min-width: 0;
+            font-size: clamp(42px, 4.5vw, 72px);
             line-height: 0.9;
             font-weight: 900;
             text-transform: uppercase;
@@ -90,9 +94,12 @@
         }
 
         .owner-portrait {
+            flex: 0 0 150px;
             width: 150px;
             height: 180px;
+            display: block;
             object-fit: cover;
+            object-position: center top;
             border-radius: 4px;
             filter: grayscale(0%);
             transition: filter 0.3s;
@@ -141,6 +148,55 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #fff;
+        }
+
+        /* STUDIO SECTION */
+        .about-section {
+            padding: 100px 50px;
+            border-top: 1px solid #222;
+        }
+
+        .about-content {
+            max-width: 850px;
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .about-content p + p {
+            margin-top: 20px;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 100px 50px;
+            border-top: 1px solid #222;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            color: #aaa;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #888;
         }
 
         /* PORTFOLIO GRID SECTION */
@@ -232,14 +288,23 @@
         @media (max-width: 968px) {
             nav { padding: 20px; }
             .hero { flex-direction: column; justify-content: center; height: auto; padding-top: 120px; }
-            .hero-title { position: relative; left: 0; padding: 0 20px; max-width: 100%; }
+            .hero-title {
+                position: relative;
+                left: 0;
+                top: auto;
+                transform: none;
+                padding: 0 20px;
+                width: 100%;
+                max-width: 100%;
+            }
             .hero-title h1 { font-size: 8vw; }
-            .hero-header-flex { gap: 20px; }
-            .owner-portrait { width: 50px; height: 70px; }
+            .hero-header-flex { gap: 20px; align-items: center; }
+            .owner-portrait { flex-basis: 90px; width: 90px; height: 110px; }
             .hero-video-container { position: relative; width: 100%; height: 50vh; margin-top: 40px; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .project-img-wrapper { height: 400px; }
-            .portfolio { padding: 50px 20px; }
+            .portfolio, .about-section, .contact-section { padding: 50px 20px; }
+            .contact-content { flex-direction: column; }
             footer { padding: 40px 20px; flex-direction: column; gap: 20px; }
         }
     </style>
@@ -258,14 +323,14 @@
     <section class="hero">
         <div class="hero-title">
             <div class="hero-header-flex">
-                <img src="images/My picture.png">
+                <img src="images/My picture.png" alt="Ar. Jefrey Bolhayon" class="owner-portrait">
                 <h1>PROJECT<br>PORTFOLIO.</h1>
             </div>
             <p>As an architect, I am dedicated to designing functional, sustainable, and visually appealing environments that improve how individuals live and engage with one another. Possessing a solid grasp of design principles and a sharp attention to detail, I tackle each project with creativity, accuracy, and intent.</p>
             <p style="margin-top: 10px;">My efforts concentrate on harmonizing shape and utility—turning ideas into significant designs that cater to both ecological and human requirements. My main focus is on creative design approaches, effective space utilization, and incorporating contemporary technologies into architectural practices.</p>
         </div>
 
-        <div class="hero-video-project">
+        <div class="hero-video-container">
             <video autoplay loop muted playsinline class="hero-video">
                 <source src="video/project.mp4">
                 Your browser does not support the video tag.
@@ -273,6 +338,16 @@
         </div>
 
         <div class="scroll-down">↓ Scroll to explore</div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2>Studio</h2>
+        </div>
+        <div class="about-content">
+            <p>Architectural design focused on functional, sustainable, and visually compelling spaces.</p>
+            <p>With experience across residential, commercial, hospitality, interior fit-out, and construction projects, each project is approached with clarity, creativity, and attention to detail.</p>
+        </div>
     </section>
 
     <section class="portfolio" id="work">
@@ -324,6 +399,19 @@
                     <div class="project-title">The Obsidian Villa</div>
                     <div class="project-category">Residential / 2025</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2>Contact</h2>
+        </div>
+        <div class="contact-content">
+            <div class="contact-details">
+                <div>Architect: Ar. Jefrey Bolhayon, UAP</div>
+                <div>Email: <a href="mailto:ar.jefreybolhayon@gmail.com">ar.jefreybolhayon@gmail.com</a></div>
+                <div>Available for architectural design, visualization, and project collaboration.</div>
             </div>
         </div>
     </section>
