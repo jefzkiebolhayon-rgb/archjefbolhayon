@@ -475,13 +475,13 @@
         <div class="grid">
             <div class="project-card" id="guinolbay">
                 <div class="project-img-wrapper">
-                <a href="guinolbay.html"><img src="images/work label./DAYTIME EXTERIOR VIEW.jpg" alt="guinolbay residence">
+                <a href="guinolbay.html"><img src="images/work label./DAYTIME EXTERIOR VIEW.jpg" alt="Guinolbay Residence">
                 </a>    
                 
                    
                 </div>
                 <div class="project-info">
-                    <div class="project-title">guinolbay residence</div>
+                    <div class="project-title">GUINOLBAY RESIDENCE</div>
                     <div class="project-category">Residential / 2025</div>
                 </div>
             </div>
@@ -559,6 +559,23 @@
 
         cards.forEach(card => {
             observer.observe(card);
+        });
+
+        // Reliable "jump to section" handling for links like guinolbay.html's
+        // back button (index.html#guinolbay). The browser's native anchor
+        // jump can fire before images/layout settle, so we do it ourselves
+        // once everything has fully loaded.
+        window.addEventListener('load', function () {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.classList.add('visible');
+                    observer.unobserve(target);
+                    setTimeout(function () {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 50);
+                }
+            }
         });
     </script>
 </body>
