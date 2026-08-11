@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ar. Jefrey Bolhayon Project Portfolio</title>
-    <style> 
+    <style>
         /* RESET & BASE STYLES */
         * {
             margin: 0;
@@ -57,68 +57,6 @@
 
         .nav-links a:hover {
             color: #fff;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-title {
-            position: absolute;
-            left: 50px;
-            z-index: 10;
-            max-width: 650px;
-        }
-
-        .hero-header-flex {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .hero-title h1 {
-            font-size: 4.5vw;
-            line-height: 0.9;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-        }
-
-        .owner-portrait {
-            width: 150px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 4px;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-
-        .owner-portrait:hover {
-            filter: grayscale(0%);
-        }
-
-        .hero-title p {
-            margin-top: 20px;
-            font-size: 15px;
-            color: #888;
-            letter-spacing: 0.5px;
-            line-height: 1.6;
-        }
-
-        /* SCROLL INDICATOR */
-        .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50px;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
         }
 
         /* PORTFOLIO GRID SECTION */
@@ -212,25 +150,21 @@
         /* RESPONSIVE DESIGN */
         @media (max-width: 968px) {
             nav { padding: 20px; }
-            .hero { flex-direction: column; justify-content: center; height: auto; padding-top: 120px; }
-            .hero-title { position: relative; left: 0; padding: 0 20px; max-width: 100%; }
-            .hero-title h1 { font-size: 8vw; }
-            .hero-header-flex { gap: 20px; }
-            .owner-portrait { width: 100px; height: 120px; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .project-img-wrapper, .project-text-wrapper { height: auto; min-height: 400px; }
             .portfolio { padding: 100px 20px 50px; }
             footer { padding: 40px 20px; flex-direction: column; gap: 20px; }
         }
 
-        /* BACK BUTTON */
-       .back-home {
-            position: fixed;
-            top: 20px;
-            left: 50px;
-            height: 40px;
-            z-index: 200;
+        /* LOGO + BACK BUTTON GROUP */
+        .logo-group {
             display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .back-home {
+            display: inline-flex;
             align-items: center;
             gap: 10px;
             color: #888;
@@ -239,49 +173,46 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-       }
+        }
 
-      .back-home .arrow {
-            font-size: 24px;
+        .back-home .arrow {
+            font-size: 18px;
             line-height: 1;
             transition: transform 0.3s ease;
-       }
+        }
 
-      .back-home:hover {
+        .back-home:hover {
             color: #fff;
-       }
+        }
 
-       .back-home:hover .arrow {
+        .back-home:hover .arrow {
             transform: translateX(-5px);
-       }
+        }
 
-      /* MOBILE */
-      @media (max-width: 968px) {
+        /* MOBILE */
+        @media (max-width: 968px) {
             .back-home {
-                top: 20px;
-                left: 20px;
-                height: 10px;
                 font-size: 11px;
             }
-    
+
             .back-home .arrow {
-                font-size: 21px;
+                font-size: 16px;
             }
-       }
-             
+        }
     </style>
 </head>
 <body>
-    
-     <!-- BACK TO HOME -->
-    <a href="index.html" class="back-home" aria-label="Back to Home">
-        <span class="arrow">←</span>
-        <span>Back to Home</span>
-    </a>
 
     <nav>
-        <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
-        
+        <div class="logo-group">
+            <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
+            <!-- The #guinolbay anchor jumps the browser straight to the Guinolbay
+                 thumbnail on the homepage instead of the top of the page. -->
+            <a href="index.html#guinolbay" class="back-home" aria-label="Back to Home">
+                <span class="arrow">←</span>
+                <span>Back to Home</span>
+            </a>
+        </div>
         <ul class="nav-links">
             <li><a href="#work">Work</a></li>
             <li><a href="#about">Studio</a></li>
@@ -289,19 +220,16 @@
         </ul>
     </nav>
 
-    
-    </section>
-
     <section class="portfolio" id="work">
         <div class="section-header">
             <h2>GUINOLBAY RESIDENCE</h2>
         </div>
-        
+
         <div class="grid">
-            <!-- 1st Image (Placement Unchanged) -->
+            <!-- 1st Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\DAYTIME EXTERIOR VIEW.jpg" alt="Daytime Exterior View">
+                    <img src="images/guinolbay/DAYTIME EXTERIOR VIEW.jpg" alt="Daytime Exterior View">
                 </div>
             </div>
 
@@ -315,58 +243,59 @@
             <!-- 2nd Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\EXT-02_F.jpg" alt="Exterior View Detail 1">
+                    <img src="images/guinolbay/EXT-02_F.jpg" alt="Exterior View Detail 1">
                 </div>
             </div>
 
-            <!-- 3rd Image Placeholder / Alternate View -->
+            <!-- 3rd Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\POOL AREA VIEW_02.jpg" alt="Interior View Detail 1">
+                    <img src="images/guinolbay/POOL AREA VIEW_02.jpg" alt="Interior View Detail 1">
                 </div>
             </div>
 
-           <!-- 4th Image Placeholder / Alternate View -->
+            <!-- 4th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\ENTRY VIEW_01.jpg" alt="Interior View Detail 2">
-               </div>
-            </div>
-           
-           <!-- 5th Image Placeholder / Alternate View -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\DINING VIEW.jpg" alt="Interior View Detail 3">
-               </div>
+                    <img src="images/guinolbay/ENTRY VIEW_01.jpg" alt="Interior View Detail 2">
+                </div>
             </div>
 
-           <!-- 6th Image Placeholder / Alternate View -->
+            <!-- 5th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\CHIMNEY & DIRTY KITCHEN AREA VIEW-01.jpg" alt="Interior View Detail 4">
-               </div>
-            </div>
- 
-           <!-- 7th Image Placeholder / Alternate View -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\BEDROOM VIEW.jpg" alt="Interior View Detail 5">
-               </div>
+                    <img src="images/guinolbay/DINING VIEW.jpg" alt="Interior View Detail 3">
+                </div>
             </div>
 
-           <!-- 8th Image Placeholder / Alternate View -->
+            <!-- 6th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\LIVING-FAMILY HALL AREA VIEW-01.jpg" alt="Interior View Detail 6">
-               </div>
+                    <img src="images/guinolbay/CHIMNEY & DIRTY KITCHEN AREA VIEW-01.jpg" alt="Interior View Detail 4">
+                </div>
             </div>
 
-           <!-- 9th Image Placeholder / Alternate View -->
+            <!-- 7th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\CLOSET & TOILET+BATHROOM VIEW.jpg" alt="Exterior View Detail 3">
-               </div>
-           </div>      
+                    <img src="images/guinolbay/BEDROOM VIEW.jpg" alt="Interior View Detail 5">
+                </div>
+            </div>
+
+            <!-- 8th Image -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="images/guinolbay/LIVING-FAMILY HALL AREA VIEW-01.jpg" alt="Interior View Detail 6">
+                </div>
+            </div>
+
+            <!-- 9th Image -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="images/guinolbay/CLOSET & TOILET+BATHROOM VIEW.jpg" alt="Exterior View Detail 3">
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -377,21 +306,22 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.project-card').forEach(card => {
-
-            card.addEventListener('click', function () {
-
-                document
-                    .querySelectorAll('.project-card')
-                    .forEach(item => {
-                     item.classList.remove('last-selected');
+        // Reveal cards on load / scroll
+        function revealCards() {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.classList.add('visible');
             });
+        }
+        window.addEventListener('DOMContentLoaded', revealCards);
 
-        this.classList.add('last-selected');
-
-    });
-
-});
-</script>
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function () {
+                document.querySelectorAll('.project-card').forEach(item => {
+                    item.classList.remove('last-selected');
+                });
+                this.classList.add('last-selected');
+            });
+        });
+    </script>
 </body>
 </html>
