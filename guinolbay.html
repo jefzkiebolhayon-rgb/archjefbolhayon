@@ -207,9 +207,7 @@
     <nav>
         <div class="logo-group">
             <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
-            <!-- The #guinolbay anchor jumps the browser straight to the Guinolbay
-                 thumbnail on the homepage instead of the top of the page. -->
-            <a href="index.html#guinolbay page" class="back-home" aria-label="Back to guinolbay page">
+            <a href="index.html#guinolbay" class="back-home" aria-label="Back to guinolbay page">
                 <span class="arrow">←</span>
                 <span>Back</span>
             </a>
@@ -306,36 +304,18 @@
         </div>
     </footer>
 
-    <script>
-        // Reveal cards on load / scroll
-        function revealCards() {
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.classList.add('visible');
-            });
-        }
-        window.addEventListener('DOMContentLoaded', revealCards);
+    
 
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', function () {
-                document.querySelectorAll('.project-card').forEach(item => {
-                    item.classList.remove('last-selected');
-                });
-                this.classList.add('last-selected');
-            });
-        });
-    </script>
+
 
 <script>
-/* Always return to the exact Guinolbay project on the homepage. */
-document.addEventListener('DOMContentLoaded', function () {
-    const backHome = document.querySelector('.back-home');
-    if (backHome) {
-        backHome.addEventListener('click', function () {
-            sessionStorage.setItem('lastProject', 'guinolbay');
-            this.href = 'index.html#guinolbay';
+    // Reveal project cards on page load.
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.project-card').forEach(function (card) {
+            card.classList.add('visible');
         });
-    }
-});
+    });
 </script>
+
 </body>
 </html>
