@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ar. Jefrey Bolhayon Project Portfolio</title>
+    <style> 
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.8), transparent);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-title {
+            position: absolute;
+            left: 50px;
+            z-index: 10;
+            max-width: 650px;
+        }
+
+        .hero-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title h1 {
+            font-size: 4.5vw;
+            line-height: 0.9;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .owner-portrait {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .owner-portrait:hover {
+            filter: grayscale(0%);
+        }
+
+        .hero-title p {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #888;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+
+        /* SCROLL INDICATOR */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #444;
+        }
+
+        /* PORTFOLIO GRID SECTION */
+        .portfolio {
+            padding: 150px 50px 100px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-img-wrapper {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            background-color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img-wrapper img {
+            transform: scale(1.03);
+        }
+
+        /* DESCRIPTION CARD STYLING */
+        .project-text-wrapper {
+            width: 100%;
+            height: 600px;
+            padding: 40px;
+            background-color: #141414;
+            border: 1px solid #222;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-text-wrapper p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #aaa;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 80px 50px;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            color: #444;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 968px) {
+            nav { padding: 20px; }
+            .hero { flex-direction: column; justify-content: center; height: auto; padding-top: 120px; }
+            .hero-title { position: relative; left: 0; padding: 0 20px; max-width: 100%; }
+            .hero-title h1 { font-size: 8vw; }
+            .hero-header-flex { gap: 20px; }
+            .owner-portrait { width: 100px; height: 120px; }
+            .grid { grid-template-columns: 1fr; gap: 30px; }
+            .project-img-wrapper, .project-text-wrapper { height: auto; min-height: 400px; }
+            .portfolio { padding: 100px 20px 50px; }
+            footer { padding: 40px 20px; flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">Studio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+    </section>
+
+    <section class="portfolio" id="work">
+        <div class="section-header">
+            <h2>GUINOLBAY RESIDENCE</h2>
+        </div>
+        
+        <div class="grid">
+            <!-- 1st Image (Placement Unchanged) -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\DAYTIME EXTERIOR VIEW.jpg" alt="Daytime Exterior View">
+                </div>
+            </div>
+
+            <!-- Description Text Block -->
+            <div class="project-card">
+                <div class="project-text-wrapper">
+                    <p>This architectural design presents a harmonious fusion of Islamic and Ifugao influences, resulting in a culturally rich and visually striking residence. The structure reflects Islamic architectural principles through its geometric patterns, arches, and emphasis on symmetry, which are subtly expressed in the façade details, balcony openings, and decorative elements. At the same time, the influence of Ifugao vernacular architecture is evident in the elevated massing, wide overhanging roofs, and the use of earthy textures and natural tones that echo traditional highland dwellings. The combination creates a balance between spirituality and environmental responsiveness—where Islamic design brings a sense of order and elegance, while Ifugao elements contribute practicality, climate adaptation, and a deep connection to nature. Together, these two traditions are reinterpreted in a modern context, producing a home that is both culturally meaningful and architecturally innovative.</p>
+                </div>
+            </div>
+
+            <!-- 2nd Image -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\EXT-02_F.jpg" alt="Exterior View Detail 1">
+                </div>
+            </div>
+
+            <!-- 3rd Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\POOL AREA VIEW_02.jpg" alt="Interior View Detail 1">
+                </div>
+            </div>
+
+           <!-- 4th Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\ENTRY VIEW_01.jpg" alt="Interior View Detail 2">
+               </div>
+            </div>
+           
+           <!-- 5th Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\DINING VIEW.jpg" alt="Interior View Detail 3">
+               </div>
+            </div>
+
+           <!-- 6th Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\CHIMNEY & DIRTY KITCHEN AREA VIEW-01.jpg" alt="Interior View Detail 4">
+               </div>
+            </div>
+ 
+           <!-- 7th Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\BEDROOM VIEW.jpg" alt="Interior View Detail 5">
+               </div>
+            </div>
+
+           <!-- 8th Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\LIVING-FAMILY HALL AREA VIEW-01.jpg" alt="Interior View Detail 6">
+               </div>
+            </div>
+
+           <!-- 9th Image Placeholder / Alternate View -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\CLOSET & TOILET+BATHROOM VIEW.jpg" alt="Exterior View Detail 3">
+               </div>
+           </div>      
+    </section>
+
+    <footer>
+        <div>&copy; 2016-2026 Project Portfolio. All rights reserved.</div>
+        <div>
+            <p>Connect: <a href="mailto:ar.jefreybolhayon@gmail.com" style="color: #888; text-decoration: none;">ar.jefreybolhayon@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.project-card');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
