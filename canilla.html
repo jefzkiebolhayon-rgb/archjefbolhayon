@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ar. Jefrey Bolhayon Project Portfolio</title>
-    <style> 
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 120px; }
         /* RESET & BASE STYLES */
         * {
             margin: 0;
@@ -57,68 +58,6 @@
 
         .nav-links a:hover {
             color: #fff;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-title {
-            position: absolute;
-            left: 50px;
-            z-index: 10;
-            max-width: 650px;
-        }
-
-        .hero-header-flex {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .hero-title h1 {
-            font-size: 4.5vw;
-            line-height: 0.9;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-        }
-
-        .owner-portrait {
-            width: 150px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 4px;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-
-        .owner-portrait:hover {
-            filter: grayscale(0%);
-        }
-
-        .hero-title p {
-            margin-top: 20px;
-            font-size: 15px;
-            color: #888;
-            letter-spacing: 0.5px;
-            line-height: 1.6;
-        }
-
-        /* SCROLL INDICATOR */
-        .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50px;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
         }
 
         /* PORTFOLIO GRID SECTION */
@@ -209,45 +148,76 @@
             font-size: 14px;
         }
 
+        /* LOGO + BACK BUTTON GROUP */
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .back-home .arrow {
+            font-size: 18px;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: #fff;
+        }
+
+        .back-home:hover .arrow {
+            transform: translateX(-5px);
+        }
+
         /* RESPONSIVE DESIGN */
         @media (max-width: 968px) {
             nav { padding: 20px; }
-            .hero { flex-direction: column; justify-content: center; height: auto; padding-top: 120px; }
-            .hero-title { position: relative; left: 0; padding: 0 20px; max-width: 100%; }
-            .hero-title h1 { font-size: 8vw; }
-            .hero-header-flex { gap: 20px; }
-            .owner-portrait { width: 100px; height: 120px; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .project-img-wrapper, .project-text-wrapper { height: auto; min-height: 400px; }
             .portfolio { padding: 100px 20px 50px; }
             footer { padding: 40px 20px; flex-direction: column; gap: 20px; }
+            .back-home { font-size: 11px; }
+            .back-home .arrow { font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
+        <div class="logo-group">
+            <div class="logo">Ar. Jefrey Bolhayon, UAP</div>
+            <a href="index.html" class="back-home" onclick="history.back(); return false;" aria-label="Back to previous page">
+                <span class="arrow">←</span>
+                <span>Back</span>
+            </a>
+        </div>
         <ul class="nav-links">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">Studio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Back to Homepage</a></li>
         </ul>
     </nav>
-
-    
-    </section>
 
     <section class="portfolio" id="work">
         <div class="section-header">
             <h2>GUINOLBAY RESIDENCE</h2>
         </div>
-        
+
         <div class="grid">
-            <!-- 1st Image (Placement Unchanged) -->
+            <!-- 1st Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\DAYTIME EXTERIOR VIEW.jpg" alt="Daytime Exterior View">
+                    <img src="images/guinolbay01/EXT-01_F.jpg" alt="Nightime Exterior View">
                 </div>
             </div>
 
@@ -261,58 +231,59 @@
             <!-- 2nd Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\EXT-02_F.jpg" alt="Exterior View Detail 1">
+                    <img src="images/guinolbay01/EXT-02_F.jpg" alt="Exterior View Detail 1">
                 </div>
             </div>
 
-            <!-- 3rd Image Placeholder / Alternate View -->
+            <!-- 3rd Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\POOL AREA VIEW_02.jpg" alt="Interior View Detail 1">
+                    <img src="images/guinolbay01/POOL AREA VIEW_02.jpg" alt="Interior View Detail 1">
                 </div>
             </div>
 
-           <!-- 4th Image Placeholder / Alternate View -->
+            <!-- 4th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\ENTRY VIEW_01.jpg" alt="Interior View Detail 2">
-               </div>
-            </div>
-           
-           <!-- 5th Image Placeholder / Alternate View -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\DINING VIEW.jpg" alt="Interior View Detail 3">
-               </div>
+                    <img src="images/guinolbay01/POOL AREA VIEW_01.jpg" alt="Interior View Detail 2">
+                </div>
             </div>
 
-           <!-- 6th Image Placeholder / Alternate View -->
+            <!-- 5th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\CHIMNEY & DIRTY KITCHEN AREA VIEW-01.jpg" alt="Interior View Detail 4">
-               </div>
-            </div>
- 
-           <!-- 7th Image Placeholder / Alternate View -->
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\BEDROOM VIEW.jpg" alt="Interior View Detail 5">
-               </div>
+                    <img src="images/guinolbay01/DINING VIEW.jpg" alt="Interior View Detail 3">
+                </div>
             </div>
 
-           <!-- 8th Image Placeholder / Alternate View -->
+            <!-- 6th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\LIVING-FAMILY HALL AREA VIEW-01.jpg" alt="Interior View Detail 6">
-               </div>
+                    <img src="images/guinolbay01/CHIMNEY & DIRTY KITCHEN AREA VIEW-01.jpg" alt="Interior View Detail 4">
+                </div>
             </div>
 
-           <!-- 9th Image Placeholder / Alternate View -->
+            <!-- 7th Image -->
             <div class="project-card">
                 <div class="project-img-wrapper">
-                    <img src="D:\JEF'S_REYON_OFB_FILE\FOR MY WEBSITE\images\guinolbay\CLOSET & TOILET+BATHROOM VIEW.jpg" alt="Exterior View Detail 3">
-               </div>
-           </div>      
+                    <img src="images/guinolbay01/BEDROOM VIEW.jpg" alt="Interior View Detail 5">
+                </div>
+            </div>
+
+            <!-- 8th Image -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="images/guinolbay01/LIVING-FAMILY HALL AREA VIEW-01.jpg" alt="Interior View Detail 6">
+                </div>
+            </div>
+
+            <!-- 9th Image -->
+            <div class="project-card">
+                <div class="project-img-wrapper">
+                    <img src="images/guinolbay01/CLOSET & TOILET+BATHROOM VIEW.jpg" alt="Exterior View Detail 3">
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -323,24 +294,11 @@
     </footer>
 
     <script>
-        const cards = document.querySelectorAll('.project-card');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+        // Reveal project cards on page load.
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.project-card').forEach(function (card) {
+                card.classList.add('visible');
             });
-        }, observerOptions);
-
-        cards.forEach(card => {
-            observer.observe(card);
         });
     </script>
 </body>
